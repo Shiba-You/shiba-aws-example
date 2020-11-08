@@ -1,10 +1,8 @@
 <template>
-  <v-layout>
-    <div>
+  <v-row>
+    <v-col class="text-center">
       <p>ネクストページだよ</p>
-      <v-btn @click="$router.push('./')">
-        戻る
-      </v-btn>
-    </div>
-  </v-layout>
+      <v-btn @click="$router.push('./')" />
+    </v-col>
+  </v-row>
 </template>

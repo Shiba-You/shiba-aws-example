@@ -1,14 +1,6 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
+  <v-row justify="center" align="center">
+    <v-col cols="12" sm="8" md="6">
       <div class="text-center">
         <logo />
         <vuetify-logo />
@@ -23,6 +15,7 @@
             For more information on Vuetify, check out the <a
               href="https://vuetifyjs.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               documentation
             </a>.
@@ -31,6 +24,7 @@
             If you have questions, please join the official <a
               href="https://chat.vuetifyjs.com/"
               target="_blank"
+              rel="noopener noreferrer"
               title="chat"
             >
               discord
@@ -40,6 +34,7 @@
             Find a bug? Report it on the github <a
               href="https://github.com/vuetifyjs/vuetify/issues"
               target="_blank"
+              rel="noopener noreferrer"
               title="contribute"
             >
               issue board
@@ -53,6 +48,7 @@
           <a
             href="https://nuxtjs.org/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Nuxt Documentation
           </a>
@@ -60,6 +56,7 @@
           <a
             href="https://github.com/nuxt/nuxt.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Nuxt GitHub
           </a>
@@ -74,12 +71,10 @@
             Continue
           </v-btn>
         </v-card-actions>
-        <v-btn @click="$router.push('./nextpage')">
-          次へ
-        </v-btn>
       </v-card>
-    </v-flex>
-  </v-layout>
+      <v-btn @click="$router.push('./nextpage')" />
+    </v-col>
+  </v-row>
 </template>
 
 <script>

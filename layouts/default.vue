@@ -57,11 +57,11 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <v-container>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-main>
     <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
@@ -80,7 +80,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer
-      :fixed="fixed"
+      :absolute="!fixed"
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>

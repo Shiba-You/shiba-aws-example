@@ -1,63 +1,49 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  mode: 'universal',
-  /*
-  ** Headers of the page
-  */
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s - shiba-aws-example',
+    title: 'shiba-aws-example',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
+
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify'
   ],
-  /*
-  ** Nuxt.js modules
-  */
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-  },
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
+
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  axios: {},
+
+  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -75,14 +61,8 @@ export default {
       }
     }
   },
-  /*
-  ** Build configuration
-  */
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
   }
 }
