@@ -74,6 +74,9 @@
             Continue
           </v-btn>
         </v-card-actions>
+        <v-btn @click="$router.push('./nextpage')">
+          次へ
+        </v-btn>
       </v-card>
     </v-flex>
   </v-layout>
