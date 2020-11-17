@@ -8,8 +8,8 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - '80:80'
+      - '3000:3000'
     environment:
-      PORT: 80
+      PORT: 3000
       HOST: 0.0.0.0
     command: './compose_cmd.bash'
