@@ -1,3 +1,26 @@
-FROM node:12.16.1
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# Nodeイメージの取得
+FROM node:14.4.0-alpine3.10
+# ワーキングディレクトリの指定
+WORKDIR /app
+# パッケージをコピー(このファイルだけ別にして先にインストールしたほうが良い)
+COPY package*.json ./
+# npm モジュールをインストール
+# RUN npm install --quiet
+RUN apk update && apk add \
+    python\
+    make\
+    g++
+# その他のファイルをコピー
+COPY . .
+# このコマンドをしないといけないとwarnが出たので
+RUN npm rebuild
+# 本当はいらないが開発環境でvue-cliを使っていたのでそこに含まれているパッケージを使っているようでwarnが出たので入れる
+RUN npm install vue-cli -g
+# ビルドします
+RUN npm run build
+# なくても良い
+ENV HOST 0.0.0.0
+# なくても良い
+EXPOSE 3000
+# 起動コマンド
+CMD ["npm", "run", "start"]
