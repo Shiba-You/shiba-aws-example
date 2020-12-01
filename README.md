@@ -1,22 +1,5 @@
-# aws-example
+# 手順
+pullした後、以下のコマンドを入力してください。
+途中、バージョンの差異で **WRAN** が出るかもしれませんが、特に気にしなくて大丈夫です。
 
-> My smashing Nuxt.js project
-
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+$ docker build --tag 『自分のDocker Hubアカウント名』/『今回のDockerイメージ名（任意）』 .
