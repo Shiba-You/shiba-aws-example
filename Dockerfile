@@ -4,15 +4,16 @@ FROM node:14.4.0-alpine3.10
 WORKDIR /app
 # パッケージをコピー(このファイルだけ別にして先にインストールしたほうが良い)
 COPY package*.json ./
-# npm モジュールをインストール
-# RUN npm install --quiet
+# npmのバージョン決定
+RUN npm install
+# エラー回避のため
 RUN apk update && apk add \
     python\
     make\
     g++
 # その他のファイルをコピー
 COPY . .
-# このコマンドをしないといけないとwarnが出たので
+# エラー回避のため
 RUN npm rebuild
 # 本当はいらないが開発環境でvue-cliを使っていたのでそこに含まれているパッケージを使っているようでwarnが出たので入れる
 RUN npm install vue-cli -g
