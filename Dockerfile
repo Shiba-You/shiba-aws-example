@@ -4,13 +4,13 @@ FROM node:14.4.0-alpine3.10
 WORKDIR /app
 # パッケージをコピー(このファイルだけ別にして先にインストールしたほうが良い)
 COPY package*.json ./
-# npmのバージョン決定
-RUN npm install
 # エラー回避のため
 RUN apk update && apk add \
     python\
     make\
     g++
+# npmのバージョン決定
+RUN npm install
 # その他のファイルをコピー
 COPY . .
 # エラー回避のため
